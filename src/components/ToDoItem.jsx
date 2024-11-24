@@ -6,6 +6,7 @@ export default function ToDoItem({
   completed,
   id,
   onToggleItem,
+  onDeleteItem,
 }) {
   return (
     <li className={completed ? "list-item-checked" : "list-item"}>
@@ -21,7 +22,9 @@ export default function ToDoItem({
       </div>
       <div>
         <p>{dueDate}</p>
-        <button className="delete-button">❌</button>
+        <button className="delete-button" onClick={() => onDeleteItem(id)}>
+          ❌
+        </button>
       </div>
     </li>
   );

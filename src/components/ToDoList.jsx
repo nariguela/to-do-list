@@ -16,7 +16,7 @@ export const toDoList = [
   },
 ];
 
-export default function ToDoList({ toDoItems, onToggleItem }) {
+export default function ToDoList({ toDoItems, onToggleItem, onDeleteItem }) {
   return (
     <>
       <ul className="list">
@@ -28,6 +28,7 @@ export default function ToDoList({ toDoItems, onToggleItem }) {
             completed={item.completed}
             id={item.id}
             onToggleItem={onToggleItem}
+            onDeleteItem={onDeleteItem}
           />
         ))}
       </ul>

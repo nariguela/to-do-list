@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FormAddToDoItem from "./components/FormAddToDoItem";
 import Button from "./components/Button";
 import Header from "./components/Header";
@@ -25,12 +25,20 @@ export default function App() {
     );
   }
 
+  function handleDeleteItem(id) {
+    setToDoItems((items) => items.filter((item) => item.id !== id));
+  }
+
   return (
     <>
       <Header />
       <div className="app">
         <div>
-          <ToDoList toDoItems={toDoItems} onToggleItem={handleToggleItem} />
+          <ToDoList
+            toDoItems={toDoItems}
+            onToggleItem={handleToggleItem}
+            onDeleteItem={handleDeleteItem}
+          />
 
           {showAddToDoItem && <FormAddToDoItem onAddItem={handleAddItem} />}
 
