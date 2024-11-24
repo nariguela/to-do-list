@@ -50,7 +50,7 @@ body {
   flex-direction: column;
   gap: 0.4rem;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .list-item {
@@ -78,4 +78,25 @@ body {
 .button:hover {
   background-color: var(--color-darkest);
   transition: 0.4s;
+}
+
+.add-to-do-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.add-to-do-name {
+  width: 60%;
+  border-radius: 1rem;
+  border-style: none;
+  background-color: var(--color-medium);
+  padding-left: 1rem;
+}
+
+.add-to-do-date {
+  border-radius: 1rem;
+  border-style: none;
+  background-color: var(--color-medium);
+  padding-left: 1rem;
 }
