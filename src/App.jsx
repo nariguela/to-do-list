@@ -17,7 +17,10 @@ export default function App() {
       <div className="app">
         <div>
           <List />
+
           {showAddToDoItem && <AddToDoItem />}
+          {showAddToDoItem && <Button>Incluir tarefa</Button>}
+
           <Button onClick={handleAddToDoItem}>
             {showAddToDoItem ? "Cancelar" : "Adicionar"}
           </Button>

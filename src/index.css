@@ -67,6 +67,7 @@ body {
 .button {
   width: auto;
   height: auto;
+  margin-right: 1rem;
   padding: 0.7rem;
   border: none;
   border-radius: 0.3rem;
