@@ -35,7 +35,7 @@ export default function App() {
           {showAddToDoItem && <FormAddToDoItem onAddItem={handleAddItem} />}
 
           <Button onClick={handleAddToDoItem}>
-            {showAddToDoItem ? "Cancelar" : "Adicionar"}
+            {showAddToDoItem ? "Cancelar" : "Adicionar tarefa"}
           </Button>
         </div>
       </div>

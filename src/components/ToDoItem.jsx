@@ -19,7 +19,10 @@ export default function ToDoItem({
           {name}
         </p>
       </div>
-      <p>{dueDate}</p>
+      <div>
+        <p>{dueDate}</p>
+        <button className="delete-button">❌</button>
+      </div>
     </li>
   );
 }
