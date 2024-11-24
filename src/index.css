@@ -38,6 +38,7 @@ body {
 
 .app {
   min-height: 66vh;
+  width: 73vh;
   background-color: var(--color-light);
   border-radius: 1rem;
   padding: 1.5rem 1rem;
@@ -84,6 +85,7 @@ body {
 .add-to-do-item {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 

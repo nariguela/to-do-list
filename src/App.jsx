@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddToDoItem from "./components/AddToDoItem";
+import FormAddToDoItem from "./components/FormAddToDoItem";
 import Button from "./components/Button";
 import Header from "./components/Header";
 import List from "./components/ToDoList";
@@ -18,8 +18,7 @@ export default function App() {
         <div>
           <List />
 
-          {showAddToDoItem && <AddToDoItem />}
-          {showAddToDoItem && <Button>Incluir tarefa</Button>}
+          {showAddToDoItem && <FormAddToDoItem />}
 
           <Button onClick={handleAddToDoItem}>
             {showAddToDoItem ? "Cancelar" : "Adicionar"}
