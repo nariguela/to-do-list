@@ -6,7 +6,7 @@ export const toDoList = [
     id: 1,
     name: "Ir no poupatempo",
     dueDate: "23/11/2024",
-    completed: true,
+    completed: false,
   },
   {
     id: 2,
@@ -16,12 +16,19 @@ export const toDoList = [
   },
 ];
 
-export default function List({ toDoItems }) {
+export default function ToDoList({ toDoItems, onToggleItem }) {
   return (
     <>
       <ul className="list">
         {toDoItems.map((item) => (
-          <ToDoItem key={item.id} name={item.name} dueDate={item.dueDate} />
+          <ToDoItem
+            key={item.id}
+            name={item.name}
+            dueDate={item.dueDate}
+            completed={item.completed}
+            id={item.id}
+            onToggleItem={onToggleItem}
+          />
         ))}
       </ul>
     </>

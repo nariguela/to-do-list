@@ -56,12 +56,28 @@ body {
 }
 
 .list-item {
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.8rem;
 }
 
 .list-item > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.list-item-checked {
+  background-color: #222f38;
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.list-item-checked > div {
   display: flex;
   gap: 1rem;
 }

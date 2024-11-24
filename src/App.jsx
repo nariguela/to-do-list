@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormAddToDoItem from "./components/FormAddToDoItem";
 import Button from "./components/Button";
 import Header from "./components/Header";
-import List, { toDoList } from "./components/ToDoList";
+import ToDoList, { toDoList } from "./components/ToDoList";
 
 export default function App() {
   const [showAddToDoItem, setShowAddToDoItem] = useState(false);
@@ -17,12 +17,20 @@ export default function App() {
     setShowAddToDoItem(false);
   }
 
+  function handleToggleItem(id) {
+    setToDoItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  }
+
   return (
     <>
       <Header />
       <div className="app">
         <div>
-          <List toDoItems={toDoItems} />
+          <ToDoList toDoItems={toDoItems} onToggleItem={handleToggleItem} />
 
           {showAddToDoItem && <FormAddToDoItem onAddItem={handleAddItem} />}
 

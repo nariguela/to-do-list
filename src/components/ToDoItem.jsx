@@ -1,11 +1,23 @@
 import React from "react";
 
-export default function ToDoItem({ name, dueDate }) {
+export default function ToDoItem({
+  name,
+  dueDate,
+  completed,
+  id,
+  onToggleItem,
+}) {
   return (
-    <li className="list-item">
+    <li className={completed ? "list-item-checked" : "list-item"}>
       <div>
-        <input type="checkbox" />
-        <p>{name}</p>
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={() => onToggleItem(id)}
+        />
+        <p style={completed ? { textDecoration: "line-through" } : {}}>
+          {name}
+        </p>
       </div>
       <p>{dueDate}</p>
     </li>
