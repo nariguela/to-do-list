@@ -10,11 +10,12 @@ export default function FormAddToDoItem({ onAddItem }) {
 
     if (!name || !dueDate) return;
 
+    const formattedDate = new Date(dueDate).toLocaleDateString("pt-BR");
     const id = crypto.randomUUID();
     const newItem = {
       id,
       name: name,
-      dueDate: dueDate,
+      dueDate: formattedDate,
       completed: false,
     };
 
