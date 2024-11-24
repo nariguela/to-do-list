@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-export default function FormAddToDoItem() {
+export default function FormAddToDoItem({ onAddItem }) {
   const [name, setName] = useState("");
   const [dueDate, setDueDate] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!name || !dueDate) return;
+
+    const id = crypto.randomUUID();
+    const newItem = {
+      id,
+      name: name,
+      dueDate: dueDate,
+      completed: false,
+    };
+
+    onAddItem(newItem);
+  }
+
   return (
     <>
-      <form className="add-to-do-item">
+      <form className="add-to-do-item" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Digite a tarefa"
@@ -21,7 +37,7 @@ export default function FormAddToDoItem() {
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
         />
-        <Button>Incluir tarefa</Button>
+        <Button>Incluir</Button>
       </form>
     </>
   );

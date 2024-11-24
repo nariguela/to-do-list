@@ -37,6 +37,7 @@ body {
 }
 
 .app {
+  height: 80vh;
   min-height: 66vh;
   width: 73vh;
   background-color: var(--color-light);

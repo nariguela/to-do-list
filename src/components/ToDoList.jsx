@@ -16,11 +16,11 @@ export const toDoList = [
   },
 ];
 
-export default function List() {
+export default function List({ toDoItems }) {
   return (
     <>
       <ul className="list">
-        {toDoList.map((item) => (
+        {toDoItems.map((item) => (
           <ToDoItem key={item.id} name={item.name} dueDate={item.dueDate} />
         ))}
       </ul>
