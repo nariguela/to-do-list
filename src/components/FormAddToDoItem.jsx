@@ -10,7 +10,13 @@ export default function FormAddToDoItem({ onAddItem }) {
 
     if (!name || !dueDate) return;
 
-    const formattedDate = new Date(dueDate).toLocaleDateString("pt-BR");
+    // Corrigir o problema de fuso horário
+    const selectedDate = new Date(dueDate);
+    selectedDate.setMinutes(
+      selectedDate.getMinutes() + selectedDate.getTimezoneOffset()
+    );
+
+    const formattedDate = selectedDate.toLocaleDateString("pt-BR");
     const id = crypto.randomUUID();
     const newItem = {
       id,
